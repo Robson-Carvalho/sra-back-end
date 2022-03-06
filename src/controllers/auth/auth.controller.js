@@ -16,7 +16,10 @@ module.exports = {
     if (!studentExists) {
       return res
         .status(404)
-        .json({ auth: false, message: "Matrícula do(a) aluno(a) não encontrada!" })
+        .json({
+          auth: false,
+          message: "Matrícula do(a) aluno(a) não encontrada!",
+        })
         .end();
     }
 
@@ -39,13 +42,13 @@ module.exports = {
         classroom: studentExists.classroom,
         course: studentExists.course,
         schoolGrade: studentExists.schoolGrade,
-        token
       };
 
       return res.status(201).json({
         auth: true,
         message: "Login efetuado com sucesso!",
-        data: student,
+        student,
+        token,
       });
     } catch (error) {
       console.log(error);

@@ -43,7 +43,7 @@ module.exports = {
       return newTime;
     }
 
-    if (parseInt(time()) < 7 || parseInt(time()) > 8) {
+    if (parseInt(time()) < 9 || parseInt(time()) > 10) {
       return res
         .status(401)
         .json({
